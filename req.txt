@@ -1,0 +1,8 @@
+opencv-python
+trackpy
+pandas
+numpy
+Pims
+numba
+jupyter
+matplotlib
