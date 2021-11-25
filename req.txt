@@ -6,3 +6,6 @@ Pims
 numba
 jupyter
 matplotlib
+av
+imageio
+moviepy
