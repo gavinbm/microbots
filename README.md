@@ -53,3 +53,5 @@ microbot_input_video_name = "Enter Input Video Name Here"
 output_Video_name = "Enter Output Video Name Here"
 ########################################################
 ```
+
+> Once the video are names, run the jupyter notebook and get your annotated video 
