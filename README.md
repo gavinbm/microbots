@@ -20,7 +20,7 @@ env\win-env\Scripts\activate.bat
 If on **Mac OSX or Linux**, run this command instead
 
 ```bash
-source env/unix-env/activate .
+source env/unix-env/bin/activate .
 ```
 
 To deactivate the virtual environment on any machine run this commadn while it is active
