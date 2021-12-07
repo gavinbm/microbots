@@ -1,56 +1,45 @@
 # Tracking Microbots with Trackpy
 Senior Design project for CISC498/475 by Casey Rock, Jayson Morgado, Yifan Ni, Ian McCabe, Olu Osinubi, and Gavin Morris
 
-## STEP 1: Running the program  
+## Prerequsites Software
+1. Anaconda 
+
+
+## Whats our software comes with
 `track.py`:is the standard python script version <br/>
-`trackpy.ipynb` is the jupyter notebook version and will have more verbose output <br/>
-<br/>
-> All dependencies are kept in the virtual environments in the env directory and they must <br/>
-> be running or you must have all the libraries from req.txt installed for the programs to work.
-<br/>
-<br/>
-
-### Running the virtual environments on your operatinve system 
-
-If on **windows** run this command from the microbots directory to activate the virtual envorionment
-
-```powershell
-env\win-env\Scripts\activate.bat
-```
-If on **Mac OSX or Linux**, run this command instead
-
-```bash
-source env/unix-env/bin/activate .
-```
-
-To deactivate the virtual environment on any machine run this commadn while it is active
-```
-deactivate
-```
-
-Once the virtual environments are active, you can either run the jupyter notebook via the jupyter kernel or you can run the standard script like this
-
-```bash
-python track.py VIDEOFILEPATH
-```
-where `VIDEOFILEPATH` is the path to your video file. If your video is in the same directory as track.py, you can just use the vieo file name, otherwise you'll need the path to the file.
-
-## Running Jupyter Notebook
-If you want to run the program in jupyter notebook you will need to run the following command 
-```
-jupyter notebook
-```
+`trackpy.ipynb`: is the jupyter notebook version that takes in a video, annotates each frame, then create a new 
+video using the annotated frames. This version will have more verbose output and plots <br/>
+`simple-trackpy.ipynb`: is the jupyter notebook version that simple takes in a video, annotates each frame, then create a new 
+video using the annotated frames. <br/>
+`req.txt`: a list of all the python Libraries that need to be downloaded.
+`/videos`: a folder that stores all the input video. If you want to annotated a video add it to this files
+`/tempframes`: a folder the store temporary frames (Our code uses this folder, you do not have to do anything with it)
 
 
+## Running the program  
 
-## STEP 2:  Setting up the Videos In Jupyter Notebook
+1. Open Anaconda Navigator
+2. Launch CMD.exe Prompt
+3. Change the Directroy to the microbots folder.
+   1. For windows type `cd <add path to folder>`
+   2. Example `cd C:\Users\casey\Documents\Work\Microbots`
+4. Run `pip install -r req.txt` to download all the required packages
+5. Close CMD.exe Prompt
+6. Launch Juypter Notebook from Anaconda Navigator 
+7. In Jupyter Notebook, Navigate to the microbots folder
+8. Click on the files named `trackpy.ipynd` or `simple-trackpy.ipynd` to open the notebook
 
-In the juypter Notenote Book On the first line you want to let the program know the name of the video file you are using. NOTE the video must be in 
-the `/videos` folder 
+
+## Setting up the Videos In Jupyter Notebook
+
+In the both juypter NoteBook On the first line you want to let the program know the name of the video file you are using. NOTE the video must be in the `/videos` folder 
+
 ```python
 ################## EDIT THIS TO START ################## 
 microbot_input_video_name = "Enter Input Video Name Here"
 output_Video_name = "Enter Output Video Name Here"
+diameter_of_cells = "enter an odd intereger for the diameters of the cells"
+proccess_all_frame = True or False # IF True it will prcess all the frames in the video, If False it will process the first 200 frames
 ########################################################
 ```
 
