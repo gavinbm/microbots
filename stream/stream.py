@@ -5,6 +5,40 @@ import pims
 import matplotlib.pyplot as plt
 from tp_plots import *  # module of modified trackpy plotting functions
 
+
+def plot_vector(x_bounds:"tuple[int, int]", y_bounds:"tuple[int, int]", vector:"list[int, int]", color='b') -> None:
+    """Function for plotting a magnetic vector relative to the current window size
+
+    x_bounds: tuple of plot bounds in the form of (min, max)
+    y_bounds: tuple of plot bounds in the form of (max, min)
+    vector: unit vector in the form of [x, y]
+    color: default color of plotted vector"""
+    # print(x_bounds, y_bounds) # debugging print statement
+
+    x_origin = None # x coordinate of the vector's origin point
+    y_origin = None # y coordinate of the vector's origin point
+    scale = None # number of data units per arrow length
+
+    width = x_bounds[1] - x_bounds[0]
+    height = y_bounds[0] - y_bounds[1]
+
+    # Plot vector according the the shorter axis. Origin point is situated at
+    # the top right of the window, offset by 1/14 of the shorter axis length.
+    # Scale adjusted to be 1/25 of the shorter axis length.
+    if height < width:
+        x_origin = x_bounds[1] - height/14
+        y_origin = y_bounds[1] + height/14
+        scale = height/25
+    else:
+        x_origin = x_bounds[1] - width/14
+        y_origin = y_bounds[1] + width/14
+        scale = width/25
+
+    # plots vector originating from the designated origin
+    plt.quiver(x_origin, y_origin, vector[0], vector[1], color=color, scale=scale)
+
+
+# main script
 cap = cv.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open camera")
@@ -27,6 +61,9 @@ while True:
     ax.axis('off')
     fig.tight_layout(pad=0)
     ax.margins(0)
+
+    # Plot magnetic vector
+    plot_vector(x_bounds=ax.get_xlim(), y_bounds=ax.get_ylim(), vector=[1,0])
 
     # Draw image onto plt canvas and convert into a numpy ndarray
     fig.canvas.draw()
