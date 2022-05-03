@@ -9,7 +9,7 @@ import pims
 import trackpy as tp
 import ipywidgets as widgets
 from IPython.display import display
-from stream.utils.tp_plots import annotate  # module of modified trackpy plotting functions
+from utils.tp_plots import annotate  # module of modified trackpy plotting functions
 
 
 class ScreenshotCoords:
