@@ -90,3 +90,16 @@ proccess_all_frame = True or False # IF True it will prcess all the frames in th
 ```
 
 > Once the video are names, run the jupyter notebook and get your annotated video 
+
+
+## Required Hardware Requirment 
+1. Nvidia 1060 Graphics Card
+2. 8 GB of RAM
+3. Intel I5 processor 
+4. Operrating System: Windows or Linux
+
+## Recomended Hardware Requirment 
+1. Nvidia 2060 Graphics Card
+2. 16 GB of RAM
+3. Intel I7 processor 
+4. Operrating System: Windows or Linux
