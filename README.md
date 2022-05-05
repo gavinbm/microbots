@@ -6,7 +6,7 @@ Senior Design project for CISC498/475 by Casey Rock, Jayson Morgado, Yifan Ni, I
 
 
 ## Whats our software comes with:
-**`cropper.py`**
+**`LiveAnnotator.py`**
 
 &emsp;Jupyter notebook for realtime microbot detection. Annotates 
 
@@ -38,7 +38,7 @@ video using the annotated frames
 
 ---
 
-## **Preparing to Run the program**  
+## **Preparing to Run the Program**  
 
 1. Open Anaconda Navigator
 2. Launch CMD.exe Prompt
@@ -49,30 +49,36 @@ video using the annotated frames
 5. Close CMD.exe Prompt
 6. Launch Juypter Notebook from Anaconda Navigator 
 7. In Jupyter Notebook, Navigate to the microbots folder
-8. Open one of the following notebooks: `cropper.ipynb`, `trackpy.ipynb`, or `simple-trackpy.ipynb`
+8. Open one of the following notebooks: `LiveAnnotator.ipynb`, `trackpy.ipynb`, or `simple-trackpy.ipynb`
 
+**Notes:**
+   1. `pip` may need to be upgraded to correctly install `req.txt`. If installation fails, try upgrading pip by using `pip install --upgrade pip`
+   2. If using a virtual environment, use `python -m pip install -r req.txt` instead for Step 4 to use your environment's `pip`. Likewise for Note 1
 ---
 
 ## **Using Live Annotation In Jupyter Notebook**
 
-The `cropper.ipynb` is used to capture a portion of your screen for live annotation of cells. The process works as follows:
+The `LiveAnnotator.ipynb` is used to capture a portion of your screen for live annotation of cells. The process works as follows:
 
 ### 1. Run the first code block and all cells in the `Trackpy Parameters` section to select parameters for `trackpy.locate()`
    - Running the parameter code blocks will start the program with default parameters. Sometimes adjusting the parameters will improve performance for different videos.
    - Details on what each parameter means can be read [here.](http://soft-matter.github.io/trackpy/dev/generated/trackpy.locate.html)
 
-### 2. Run the `Screen Cropper` code block. Now, drag your mouse to select a portion of your screen for the program to record
-   -  The selected area will be the area that `trackpy.locate()` will crop
-   - If you have already selected an area and want to reselect, simply click on a new area and drag again.
+### 2. Run the `Screen Cropper` code blocks. Now, drag your mouse to select a portion of your screen for the program to record
    - Selecting an area is *required*
+   - The selected area will be the area that `trackpy.locate()` will apply edge detection to.
+   - If you have already selected an area and want to reselect, simply click on a new area and drag again.
 
-### 3. Run the `Microbot Locator` code block. The program will continuously screenshot and annotate the selected area, displaying a stream of annotated images in a new window.
+### 3. Run the `Microbot Locator` code blocks. The program will continuously screenshot and annotate the selected area, displaying a stream of annotated images in a new window.
    - The window will be separate from your Jupyter Notebook
    - Potential microbots will be circled in blue.
 
 ### 4. Exit the window by clicking into the window are pressing the `q` button.
+   - This will end the `Microbot Locator` code block execution.
 
-### 5. Run steps 1-2 again to adjust parameters and re-crop the screen selection. Then, follow step 3 to run live annotation again.
+### 5. Adjust parameters and re-crop screen as necessary. And repeat Step 4 run live annotation again.
+   - You do not need to re-run the code blocks for Steps 1-2; shifting the sliders will adjust the already initialized parameters.
+   - Repeating Step 3 to re-crop the screen is optional; you may simply adjust parameters and skip to Step 4 to use the same selection area.
 
 ---
 
