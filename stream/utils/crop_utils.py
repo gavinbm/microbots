@@ -109,6 +109,7 @@ def track_screenshots(coords:ScreenshotCoords, params:dict):
             topn=params["topn"],
             separation=params["separation"],
             smoothing_size=params["smoothing_size"],
+            percentile=params["percentile"],
             invert=True,
             engine="numba"
         )
