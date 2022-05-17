@@ -86,6 +86,6 @@ def save_locate_csv(
         recording = reduce_df_list(frames)
         linked_frames = tp.link_df(recording, search_range, memory=memory)
         linked_frames.to_csv(csv_name, index=False)
-        print(f"File {csv_name} successfully saved to ./output/{csv_name}")
+        print(f"File {csv_name} successfully saved to {csv_name}")
     else:
         print("[ ERROR ] DataFrame list is empty.")
