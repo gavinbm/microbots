@@ -70,15 +70,20 @@ The `LiveAnnotator.ipynb` is used to capture a portion of your screen for live a
    - If you have already selected an area and want to reselect, simply click on a new area and drag again.
 
 ### 3. Run the `Microbot Locator` code blocks. The program will continuously screenshot and annotate the selected area, displaying a stream of annotated images in a new window.
-   - The window will be separate from your Jupyter Notebook
+   - First, you will need to select whether or not you want the positions of potential microbots recorded
+      - This only needs to be run once
+   - The annotated images will be in a separate window from your Jupyter Notebook
    - Potential microbots will be circled in blue.
 
 ### 4. Exit the window by clicking into the window are pressing the `q` button.
    - This will end the `Microbot Locator` code block execution.
 
-### 5. Adjust parameters and re-crop screen as necessary. And repeat Step 4 run live annotation again.
+### 5. Run the `Export Located Positions to CSV` code block to save a timestamped CSV to the `output` folder.
+   - This code will only save a CSV if "Record Located Microbot Positions?" is set to "Yes", otherwise an error will be printed.
+
+### 6. Adjust parameters and re-crop screen as necessary. And repeat Step 4 run live annotation again.
    - You do not need to re-run the code blocks for Steps 1-2; shifting the sliders will adjust the already initialized parameters.
-   - Repeating Step 3 to re-crop the screen is optional; you may simply adjust parameters and skip to Step 4 to use the same selection area.
+   - Repeating Step 2 to re-crop the screen is optional; you may simply adjust parameters and skip to Step 3 to use the same selection area.
 
 ---
 
